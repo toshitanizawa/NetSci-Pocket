@@ -28,11 +28,13 @@ problems.
 python-flask
 ============
 
-This project heavily rely on a python module, flask, for Web application
-building. The URL for python-falk is <http://flask.pocoo.org/>.
+This project heavily relies on a python module, flask, for web
+application building. The URL for python-falk is
+<http://flask.pocoo.org/>. Install the python-flask module before
+running the script runserver.py.
 
 If python-flask is properly installed, you can start the web application
 of the project by running the python script runserver.py. This script
-runs a tiny http daemon on your PC waiting for HTTP connection at port
-5000. To see the entry page, access <http://localhost:5000/> from your
-web browser.
+runs a tiny http daemon on your local PC waiting for HTTP connection at
+port 5000. To see the entry page, access <http://localhost:5000/> from
+your web browser.
