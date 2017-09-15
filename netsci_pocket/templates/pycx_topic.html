@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block headerbody %}
+
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+     TeX: {
+     equationNumbers: { autoNumber: "AMS" },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+     }
+     });
+   </script>
+     
+   <script type="text/javascript" async
+	   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+{% endblock %}
+   
+{% block mainbody %}
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>{{ title }}</h1>
+        <p class="lead">a Python-based simulation code repository for complex systems education.</p>
+      </div> <!-- /page-header -->
+
+    </div> <!-- /container -->
+    
+    <div class="container">
+      <div class="row">
+	<div class="col-md-4">
+
+	  <form method="post" role="form">
+	    {% for field in form %}
+	    <div class="form-group">
+	      <label>{{ field.name }}: </label>
+	      {{ field(size=12) }}
+	    </div> <!-- /form-group -->
+	    {% endfor %}
+	  
+	    <p><button type="submit" class="btn btn-primary">Compute</button></p>
+	    
+	  </form>
+	  
+	</div> <!-- /col-md-4 -->
+
+	<div class="col-md-8">
+	  <p>
+	    {% if result != None %}
+	    <img src="data:image/png; base64, {{ result }}" width="500">
+	    {% endif %}
+	  </p>
+	</div> <!-- /col-md-8 -->
+
+      </div> <!-- /row -->
+    </div>   <!-- /container -->
+{% endblock %}
