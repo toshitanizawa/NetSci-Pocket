@@ -1,0 +1,51 @@
+* Change Log
+
+  xrange -> range
+
+  networkx 2.0 has no functionality nodes_iter().
+
+** pycxsimulator.py
+
+   In Python 3 the module Tkinter is renamed to tkinter (all in lowercases).
+   # from Tkinter import * 
+   from tkinter import *
+   from tkinter.ttk import Notebook
+
+   PL.hold() is deprecated. -> PL.hold(True) and PL.hold(False) are simply commented out.
+
+** abm-schelling.py
+
+   from scipy.stats.mstats_basic import threshold
+   
+   threshold is deprecated from scipy 0.17. -> The import line is commented out.
+
+** ca-forestfire.py
+
+   height/2 -> int(height/2)
+   width/2  -> int(width/2)
+   
+** ds-cobwebplot.py
+
+   The map function returns a generator of a list.
+   nextValues must be a genuine list to be an input of plot.
+
+   nextValues = list(map(f, currentValues)) # Fixed by toshi
+
+** net_majority.py
+
+   nbs = list(network.neighbors(n)) <- G.neighbors(n) returns an iterator, not a list.
+
+** net_networkgrowth.py
+
+   targets = list(dict(network.degree()).keys()) <- dict_keys object does not support indexing.
+   And network.degree() returns an iterator, not a dictionary.
+
+** net-networkxdemo1.py
+
+   print ... -> print (...)
+   
+
+   
+
+
+

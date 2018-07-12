@@ -27,9 +27,10 @@
 ## matplotlib.use('TkAgg')
 
 import pylab as PL
-import ttk
-from Tkinter import *
-from ttk import Notebook
+# fixed by Toshi Tanizawa for updating to Python 3
+# from Tkinter import * (applied to Python 2)
+from tkinter import *
+from tkinter.ttk import Notebook
 
 
 class GUI:

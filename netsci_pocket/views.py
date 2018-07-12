@@ -4,7 +4,7 @@ from flask import Flask, render_template, jsonify, request, url_for
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Directory for JSON files
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-json_root = './static/jsons/'
+json_root = './netsci_pocket/static/jsons/'
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Top view
@@ -76,7 +76,7 @@ def show_jpg(jpg_file_name):
     else:
         title = "Unknown"
         exp_text = "Undefined"
-        
+
     return render_template('network_example_topic.html', title=title, exp_text=exp_text, url_for_img_file=url_for_img_file)
 
 # +++ network science basics +++
@@ -104,7 +104,7 @@ def net_sci_basics(topic):
     else:
         title = u'Unknown'
         javascript_src = url_for('static', filename='js/miserables.js')
-        
+
     return render_template('network_science_basics.html', title=title, javascript_src=javascript_src, side_text=side_text, previous_page=previous_page, next_page=next_page)
 
 @app.route('/net_sci_basics2/node_degree')
@@ -127,9 +127,9 @@ def net_sci_basics2_ba():
 
 @app.route('/net_sci_basics2/shortest_path', methods=['GET', 'POST'])
 def net_sci_basics2_shortest_path():
-    
+
     javascript_src = url_for('static', filename = 'js/shortest_path.js')
-    
+
     return render_template('net_sci_basics_shortest_path.html', javascript_src=javascript_src)
 
 
@@ -143,18 +143,18 @@ def network_struct_top():
 
 @app.route('/network_struct/avr_path_length')
 def net_struct_avr_path_length():
-    
+
     title = u'Average Distance in a Network'
     javascript_src = url_for('static', filename = 'js/large_nw_avr_path_length.js')
-    
+
     return render_template('network_struct_avr_path_l.html', title=title, javascript_src=javascript_src)
 
 @app.route('/network_struct/avr_path_trial')
 def net_struct_avr_path_trial():
-    
+
     title = u'Distance between Nodes in a Large Network'
     javascript_src = url_for('static', filename = 'js/path_length_trial.js')
-    
+
     return render_template('network_struct_avr_path_trial.html', title=title, javascript_src=javascript_src)
 
 
@@ -179,14 +179,14 @@ def pycx():
 # *** ds_bifurcationdiagram ***
 @app.route('/ds_bifurcationdiagram', methods=['GET', 'POST'])
 def ds_bifurcationdiagram():
-    from pycx.ds_bifurcationdiagram import InputForm, draw
+    from netsci_pocket.pycx.ds_bifurcationdiagram import InputForm, draw
 
     form = InputForm(request.form)
     if request.method == 'POST' and form.validate():
         result = draw(form.x0.data, int(form.samplingStartTime.data), int(form.sampleNumber.data))
     else:
         result = None
-        
+
     return render_template('pycx_topic.html', form=form, result=result, title="DS: Bifurcation Diagram")
 
 # +++++++ The End of the script +++++++++++++++++++++++++++++++++++++

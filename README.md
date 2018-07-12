@@ -30,11 +30,20 @@ python-flask
 
 This project heavily relies on a python module, flask, for web
 application building. The URL for python-falk is
-<http://flask.pocoo.org/>. Install the python-flask module before
-running the script runserver.py.
+<http://flask.pocoo.org/>. Install and set up the python-flask module
+properly before running the script run~flask~.sh according to the
+instruction in <http://flask.pocoo.org/docs/1.0/installation/>.
 
 If python-flask is properly installed, you can start the web application
-of the project by running the python script runserver.py. This script
+of the project by running the bach script run~flask~.sh. This script
 runs a tiny http daemon on your local PC waiting for HTTP connection at
 port 5000. To see the entry page, access <http://localhost:5000/> from
 your web browser.
+
+Change Log
+==========
+
+-   2017-09-15: This git repo is created.
+
+-   2018-07-12: Modified to adapt for the latest version of the flask
+    module (1.0).
