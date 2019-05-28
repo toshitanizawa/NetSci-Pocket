@@ -110,7 +110,7 @@ directory PWD.
     ```
 
 8.  To stop the server, just kill the server process invoked by
-    run~flask~.sh with, for example, ^C^ (Control-C).
+    run~flask~.sh with, for example, ^C (Control-C).
 
 9.  Deactivate the virtual environment by the command
 
