@@ -47,3 +47,5 @@ Change Log
 
 -   2018-07-12: Modified to adapt for the latest version of the flask
     module (1.0).
+
+-   2019-05-28: Contents updated after NetSciEd2019.
