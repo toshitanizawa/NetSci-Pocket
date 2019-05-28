@@ -92,6 +92,16 @@ We assume that you are now in the directory PWD.
      http://(the IP address of the 'Pocket' server):5000
    #+end_example
 
+8. To stop the server, just kill the server process invoked by run_flask.sh with,
+   for example, ^C (Control-C).
+
+9. Deactivate the virtual environment by the command
+   #+begin_example
+     deactivate
+   #+end_example
+
+
+
 * Change Log
 
 + 2017-09-15: This git repo is created.

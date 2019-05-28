@@ -1,6 +1,9 @@
-author: Toshihiro Tanizawa
+---
+author:
+- Toshihiro Tanizawa
 startup: indent
 title: Network Science in Your Pocket
+---
 
 Introduction
 ============
@@ -52,30 +55,30 @@ Virtual Environment
 ===================
 
 Python3 can construct the virtual environment for this project without
-'virtualenv'. The following is a step-by-step instruction to construct a
-working environment for this project. The only requirement is that your
-system has Python3 installed. We assume that you are now in the
+\'virtualenv\'. The following is a step-by-step instruction to construct
+a working environment for this project. The only requirement is that
+your system has Python3 installed. We assume that you are now in the
 directory PWD.
 
 1.  In the first place, introduce the virtual environment by the command
 
-    ``` example
+    ``` {.example}
     python3 -m venv venv
     ```
 
-    This command create the directory 'venv'.
+    This command create the directory \'venv\'.
 
 2.  Activate the environment by the command
 
-    ``` example
+    ``` {.example}
     . venv/bin/activate
     ```
 
-    (Don't forget the first '.' (period)!!!)
+    (Don\'t forget the first \'.\' (period)!!!)
 
 3.  Install the necessary modules by pip command
 
-    ``` example
+    ``` {.example}
     pip install matplotlib
     pip install Flask
     pip install Flask-WTF
@@ -83,27 +86,36 @@ directory PWD.
 
 4.  Git clone this project.
 
-    ``` example
+    ``` {.example}
     git clone https://github.com/toshitanizawa/NetSci-Pocket.git
     ```
 
 5.  move into the project directory.
 
-    ``` example
+    ``` {.example}
     mv NetSci-Pocket
     ```
 
 6.  Run the starting script
 
-    ``` example
+    ``` {.example}
     ./run_flask.sh
     ```
 
 7.  Access through your web browser at the asigned port number. (The
     default is 5000.) For example,
 
-    ``` example
+    ``` {.example}
     http://(the IP address of the 'Pocket' server):5000
+    ```
+
+8.  To stop the server, just kill the server process invoked by
+    run~flask~.sh with, for example, ^C^ (Control-C).
+
+9.  Deactivate the virtual environment by the command
+
+    ``` {.example}
+    deactivate
     ```
 
 Change Log
