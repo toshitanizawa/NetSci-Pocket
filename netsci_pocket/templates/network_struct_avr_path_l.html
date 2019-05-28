@@ -1,0 +1,88 @@
+{% extends "layout_network_struct.html" %}
+
+{% block headerbody %}
+
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+     TeX: {
+     equationNumbers: { autoNumber: "AMS" },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+     }
+     });
+   </script>
+     
+   <script type="text/javascript" async
+	   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- D3.js -->
+    <script src="/static/js/d3.min.js"></script>
+
+    <!-- jsnetworkx.js -->
+    <script src="/static/js/jsnetworkx.js"></script>
+    
+    <!-- Styles for network visualization -->
+    <style>
+      .link {
+      stroke: #999;
+      stroke-opacity: .6;
+      }
+      
+      .axis path,
+      .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+      }
+
+      .dot {
+      stroke: #000;
+      }
+      
+    </style>   
+{% endblock %}
+   
+{% block mainbody %}
+
+    <div class="container">
+
+      <div class="page-header">
+        <p class="lead">Structure of the Internet</p>
+        <h1>{{ title }}</h1>
+      </div> <!-- /page-header -->
+
+    </div> <!-- /container -->
+    
+    <div class="container">
+      <div class="row">
+	<div class="col-md-4">
+	  <h3>Average Distance as a Function of the Total Node Number</h3>
+
+	  <p>These are log-log plots of the average path length as a function of the total node number of the network. Notice how the average path length inceaces as the total number of nodes increaces.</p>
+
+	  <hr>
+
+	  <a class="btn btn-success" onclick="avr_path_length_large_network()" role="button">Average Distance</a>
+
+	  <hr>
+
+	  <a class="btn btn-info" onclick="avr_path_length_large_network_log()" role="button">Log-Log Plot of the Average Distance</a>
+	  
+
+	</div> <!-- /col-md-4 -->
+
+	<div class="col-md-8">
+
+	  <div id="graph_title_lattice"></div>
+	  <div class="graph_pic_lattice"></div>
+
+	  <div id="graph_title_sf"></div>
+	  <div class="graph_pic_sf"></div>
+	  
+	</div> <!-- /col-md-8 -->
+
+      </div> <!-- /row -->
+    </div>   <!-- /container -->
+
+    <script type="text/javascript" src="{{ javascript_src }}" ></script>
+
+{% endblock %}

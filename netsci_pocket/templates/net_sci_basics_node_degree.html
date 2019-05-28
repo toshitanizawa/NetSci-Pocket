@@ -1,0 +1,83 @@
+{% extends "layout_network_sci.html" %}
+
+{% block headerbody %}
+
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+     TeX: {
+     equationNumbers: { autoNumber: "AMS" },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+     }
+     });
+   </script>
+     
+   <script type="text/javascript" async
+	   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- D3.js -->
+    <script src="/static/js/d3.min.js"></script>
+
+    <!-- jsnetworkx.js -->
+    <script src="/static/js/jsnetworkx.js"></script>
+    
+    <!-- Styles for network visualization -->
+    <style>
+      .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+      }
+      
+      .link {
+      stroke: #999;
+      stroke-opacity: .6;
+      }
+    </style>
+   
+{% endblock %}
+   
+{% block mainbody %}
+
+    <div class="container">
+
+      <div class="page-header">
+        <p class="lead">Network Science Basics</p>
+        <h1>{{ title }}</h1>
+      </div> <!-- /page-header -->
+
+    </div> <!-- /container -->
+    
+    <div class="container">
+      <div class="row">
+	<div class="col-md-4">
+
+	  <p>The number of edges emanating from a node is called the "degree" of the node. For instance, in the network in the right, the degree of node 4 is two. Can you guess the degrees of the other nodes?</p>
+
+	  <hr>
+
+	  <p><a class="btn btn-info" onclick="myFunction()" role="button">Answer</a></p>
+
+	  <hr>
+	  
+	  <p><a class="btn btn-default" href="/net_sci_basics/scale_free" role="button">&laquo; previous</a>
+	  <a class="btn btn-default" href="/net_sci_basics2/degree_distribution" role="button">next &raquo;</a></p>
+	  
+	</div> <!-- /col-md-4 -->
+
+	<div class="col-md-8">
+	  <div class="net_pic"></div>
+	  <script type="text/javascript" src="{{ javascript_src }}" ></script>
+	  
+	  <div id="graph_pic"></div>
+	  
+	  <script>
+	    function myFunction() {
+	    document.getElementById("graph_pic")
+	    .innerHTML = "<table class='table table-condensed'><thead><tr><th>Node Number</th><th>Degree</th></tr></thead><tbody><tr><td>1</td><td>3</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>3</td></tr><tr><td>4</td><td>2</td></tr><tr><td>5</td><td>4</td></tr><tr><td>6</td><td>1</td></tr></tbody></table>";
+	    }
+	  </script>
+	  
+	</div> <!-- /col-md-8 -->
+
+      </div> <!-- /row -->
+    </div>   <!-- /container -->
+{% endblock %}
