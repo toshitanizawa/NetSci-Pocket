@@ -34,6 +34,9 @@ application building. The URL for python-falk is
 properly before running the script run~flask~.sh according to the
 instruction in <http://flask.pocoo.org/docs/1.0/installation/>.
 
+It is also a good approach to install the flask environment by virtualenv
+according to the instruction in <http://flask.pocoo.org/docs/1.0/installation/#install-virtualenv/>.
+
 If python-flask is properly installed, you can start the web application
 of the project by running the bach script run~flask~.sh. This script
 runs a tiny http daemon on your local PC waiting for HTTP connection at
